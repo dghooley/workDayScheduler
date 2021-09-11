@@ -1,12 +1,9 @@
 
 $(document).ready(function() {
 // console.log("were connected")
-
 let date = document.querySelector("#current-day");
 $(currentDay).text(moment().format('LLLL'))
 moment().hour(Number);
-let currentTime = moment().hour();
-
 // add click event to save button
 $(".saveBtn").on("click", function() {
     // userText is getting the value of each textArea's input.
@@ -15,27 +12,26 @@ $(".saveBtn").on("click", function() {
     var userTime = $(this).parent().attr("id")
     // setting userTime as the key and userText as the value to localstorage
     localStorage.setItem(userTime, userText)
-    // reference the class of the notification div and .addClass of "show" 
-    // setTimeOut function for notification div to disappear(.removeClass) after 5 seconds
 });
-
 // set up function that tests the block hour (.time-block) and if/else it against the  current world time (moment.js)
 function currentWorldTime () {
+    let currentTime = moment().hour();
 $(".time-block").each(function () {
-let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));
-//$(this).parents(".row").find(".time-block").val(localStorage.getItem(hourBlock));
-    
+let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));    
 // if/else statements looping therough a series of adding and removing classes based upon values
+    // set past time
     if (hourBlock < currentTime) {
         $(this).parents(".row").find(".time-block").addClass("past")
         $(this).parents(".row").find(".time-block").removeClass("present")
         $(this).parents(".row").find(".time-block").removeClass("future")
-    }
+    } 
+    // set present time
     else if (hourBlock === currentTime) {
         $(this).parents(".row").find(".time-block").addClass("present")
         $(this).parents(".row").find(".time-block").removeClass("past")
         $(this).parents(".row").find(".time-block").removeClass("future")
     }
+    // set future time
     else {
         $(this).parents(".row").find(".time-block").addClass("future")
         $(this).parents(".row").find(".time-block").removeClass("present")
@@ -43,13 +39,9 @@ let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));
     }
 });
 }
-
-
-
-
-
-
-
+// retrieve data from local storage
+$(this).parents(".row").find(".time-block").val(localStorage.getItem(timeBlock));
+// call function
 currentWorldTime()
 });   
 
