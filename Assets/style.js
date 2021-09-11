@@ -2,29 +2,11 @@
 $(document).ready(function() {
 // console.log("were connected")
 
-// set up function that tests the block hour (.time-block) and if/else it against the  current world time (moment.js)
 let date = document.querySelector("#current-day");
 $(currentDay).text(moment().format('LLLL'))
 moment().hour(Number);
 let currentTime = moment().hour();
 
-$(".time-block").each(function () {
-let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));
-$(this).parents(".row").find(".time-block").val(localStorage.getItem(hourBlock));
-    // if/else statements adding a series of adding and removing classes based upon values.
-    if (hourBlock < currentTime) {
-        $(this).parents(".row").find(".time-block").addClass("past")
-    }
-    else if (hourBlock === currentTime) {
-        $(this).removeClass("past")
-        $(this).addClass("present")
-    }
-    else {
-        $(this).removeClass("past")
-        $(this).removeClass("present")
-        $(this).addClass("future")
-    }
-});
 // add click event to save button
 $(".saveBtn").on("click", function() {
     // userText is getting the value of each textArea's input.
@@ -36,6 +18,39 @@ $(".saveBtn").on("click", function() {
     // reference the class of the notification div and .addClass of "show" 
     // setTimeOut function for notification div to disappear(.removeClass) after 5 seconds
 });
+
+// set up function that tests the block hour (.time-block) and if/else it against the  current world time (moment.js)
+function currentWorldTime () {
+$(".time-block").each(function () {
+let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));
+//$(this).parents(".row").find(".time-block").val(localStorage.getItem(hourBlock));
+    
+// if/else statements looping therough a series of adding and removing classes based upon values
+    if (hourBlock < currentTime) {
+        $(this).parents(".row").find(".time-block").addClass("past")
+        $(this).parents(".row").find(".time-block").removeClass("present")
+        $(this).parents(".row").find(".time-block").removeClass("future")
+    }
+    else if (hourBlock === currentTime) {
+        $(this).parents(".row").find(".time-block").addClass("present")
+        $(this).parents(".row").find(".time-block").removeClass("past")
+        $(this).parents(".row").find(".time-block").removeClass("future")
+    }
+    else {
+        $(this).parents(".row").find(".time-block").addClass("future")
+        $(this).parents(".row").find(".time-block").removeClass("present")
+        $(this).parents(".row").find(".time-block").removeClass("past")
+    }
+});
+}
+
+
+
+
+
+
+
+currentWorldTime()
 });   
 
 /* javaScript Block
@@ -63,6 +78,3 @@ for (var i = 0; i < 9; i++) {
         })
 }
 */
-
-
-// to reference each time block and loop through it look up .each method for jQuery
