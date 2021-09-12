@@ -21,7 +21,6 @@ function currentHour() {
 $(".time-block").each(function () {
     let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));    
 
-
 // if/else statements looping through a series of adding and removing classes based upon values
     if (hourBlock < currentTime) {
         /*$(this).parents(".row").find(".time-block").addClass("past")
@@ -61,7 +60,7 @@ $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-14"))
 $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-15"));
 $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-16"));
 $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-17"));*/
-$("#hour-9 .userInput").val(localStorage.getItem("hour9"));
+$("#hour-9 .userInput").val(localStorage.getItem("hour-9"));
 $("#hour-10 .userInput").val(localStorage.getItem("hour-10"));
 $("#hour-11 .userInput").val(localStorage.getItem("hour-11"));
 $("#hour-12 .userInput").val(localStorage.getItem("hour-12"));
