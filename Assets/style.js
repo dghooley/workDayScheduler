@@ -8,18 +8,18 @@ moment().hour(Number);
 // add click event to save button
 $(".saveBtn").on("click", function() {
     // userText is getting the value of each textArea's input.
-    var userText = $(this).siblings(".userInput").val()
-    // userTime referencing the parent divs id 
-    var userTime = $(this).parent().attr("id")
+    var userText=$(this).siblings(".userInput").val()
+    // userTime referencing the parent div's id 
+    var userTime=$(this).parent().attr("id")
     // setting userTime as the key and userText as the value to localstorage
     localStorage.setItem(userTime, userText)
 });
 
 // set up function that tests the block hour (.time-block) and if/else it against the  current world time (moment.js)
 function currentHour() {
-    let currentTime = moment().hour();
+    let currentTime=moment().hour();
 $(".time-block").each(function () {
-    let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));    
+    let hourBlock=parseInt($(this).parents('.row').find('.hour').attr("id"));    
 
 // if/else statements looping through a series of adding and removing classes based upon values
     if (hourBlock < currentTime) {
