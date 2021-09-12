@@ -18,8 +18,10 @@ $(".saveBtn").on("click", function() {
 // set up function that tests the block hour (.time-block) and if/else it against the  current world time (moment.js)
 function currentHour() {
     let currentTime=moment().hour();
+//   console.log(currentTime);
 $(".time-block").each(function () {
-    let hourBlock=parseInt($(this).parents('.row').find('.hour').attr("id"));    
+    let hourBlock=parseInt($(this).parents('.row').find('.hour').attr("id"));   
+    //console.log(hourBlock);
 
 // if/else statements looping through a series of adding and removing classes based upon values
     if (hourBlock < currentTime) {
@@ -29,6 +31,7 @@ $(".time-block").each(function () {
         $(this).removeClass("future");
         $(this).removeClass("present");
         $(this).addClass("past");
+    //  console.log("past");
     } 
     // set present time
     else if (hourBlock === currentTime) {
@@ -38,6 +41,7 @@ $(".time-block").each(function () {
         $(this).removeClass("past");
         $(this).removeClass("future");
         $(this).addClass("present");
+    //  console.log("present");
     }
     // set future time
     else {
@@ -47,6 +51,7 @@ $(".time-block").each(function () {
         $(this).removeClass("past");
         $(this).removeClass("present");
         $(this).addClass("future");
+    //  console.log("future");
     }
 });
 }
