@@ -12,13 +12,116 @@ $(".saveBtn").on("click", function() {
     // setting userTime as the key and userText as the value to localstorage
     localStorage.setItem(userTime, userText)
 });
+
 // set up function that tests the block hour (.time-block) and if/else it against the  current world time (moment.js)
-function currentWorldTime () {
+function currentHour() {
     let currentTime = moment().hour();
 $(".time-block").each(function () {
 let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));    
-// if/else statements looping therough a series of adding and removing classes based upon values
-    // set past time
+
+// if/else statements looping through a series of adding and removing classes based upon values
+//  JavaScript set time and display
+/*  var hour9 = 9;
+    var hour10 = 10;
+    var hour11 = 11;
+    var hour12 = 12;
+    var hour13 = 13;
+    var hour14 = 14;
+    var hour15 = 15;
+    var hour16 = 16;
+    var hour17 = 17;
+9 AM
+    if (currentTime < hour9) {
+        $("#hour-9").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-9").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-9").addClass("present")
+    }
+10 AM
+    if (currentTime < hour9) {
+        $("#hour-10").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-10").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-10").addClass("present")
+    }
+11 AM
+    if (currentTime < hour9) {
+        $("#hour-11").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-11").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-11").addClass("present")
+    }
+12 AM
+    if (currentTime < hour9) {
+        $("#hour-12").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-12").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-12").addClass("present")
+    }
+1 PM
+    if (currentTime < hour9) {
+        $("#hour-13").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-13").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-13").addClass("present")
+    }
+2 PM
+    if (currentTime < hour9) {
+        $("#hour-14").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-14").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-14").addClass("present")
+    }
+3 PM
+    if (currentTime < hour9) {
+        $("#hour-15").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-15").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-15").addClass("present")
+    }
+4 PM
+    if (currentTime < hour9) {
+        $("#hour-16").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-16").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-16").addClass("present")
+    }
+5 PM
+    if (currentTime < hour9) {
+        $("#hour-17").addClass("future");
+    }
+    else if (currentTime > hour9) {
+        $("#hour-17").addClass("past");
+    }
+    else if (currentTime === hour9) {
+        $("#hour-17").addClass("present")
+    }
+*/
+
     if (hourBlock < currentTime) {
         /*$(this).parents(".row").find(".time-block").addClass("past")
         $(this).parents(".row").find(".time-block").removeClass("present")
@@ -57,20 +160,20 @@ $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-14"))
 $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-15"));
 $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-16"));
 $(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-17"));*/
-$("hour-9 .description").val(localStorage.getItem("hour-9"));
-$("hour-10 .description").val(localStorage.getItem("hour-10"));
-$("hour-11 .description").val(localStorage.getItem("hour-11"));
-$("hour-12 .description").val(localStorage.getItem("hour-12"));
-$("hour-13 .description").val(localStorage.getItem("hour-13"));
-$("hour-14 .description").val(localStorage.getItem("hour-14"));
-$("hour-15 .description").val(localStorage.getItem("hour-15"));
-$("hour-16 .description").val(localStorage.getItem("hour-16"));
-$("hour-17 .description").val(localStorage.getItem("hour-17"));
+$(".userInput .description").val(localStorage.getItem("#hour-9"));
+$(".userInput .description").val(localStorage.getItem("#hour-10"));
+$(".userInput .description").val(localStorage.getItem("#hour-11"));
+$(".userInput .description").val(localStorage.getItem("#hour-12"));
+$(".userInput .description").val(localStorage.getItem("#hour-13"));
+$(".userInput .description").val(localStorage.getItem("#hour-14"));
+$(".userInput .description").val(localStorage.getItem("#hour-15"));
+$(".userInput .description").val(localStorage.getItem("#hour-16"));
+$(".userInput .description").val(localStorage.getItem("#hour-17"));
 // call function
-currentWorldTime()
+currentHour()
 });   
 
-/* javaScript Block
+/* javaScript loop
 for (var i = 0; i < 9; i++) {
     if (currentTime === militaryTime[i]) {
     console.log(i);
