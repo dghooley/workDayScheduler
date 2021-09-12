@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
 // console.log("were connected")
 let date = document.querySelector("#current-day");
@@ -21,26 +20,52 @@ let hourBlock = parseInt($(this).parents('.row').find('.hour').attr("id"));
 // if/else statements looping therough a series of adding and removing classes based upon values
     // set past time
     if (hourBlock < currentTime) {
-        $(this).parents(".row").find(".time-block").addClass("past")
+        /*$(this).parents(".row").find(".time-block").addClass("past")
         $(this).parents(".row").find(".time-block").removeClass("present")
-        $(this).parents(".row").find(".time-block").removeClass("future")
+        $(this).parents(".row").find(".time-block").removeClass("future")*/
+        $(this).removeClass("future");
+        $(this).removeClass("present");
+        $(this).addClass("past");
     } 
     // set present time
     else if (hourBlock === currentTime) {
-        $(this).parents(".row").find(".time-block").addClass("present")
+        /*$(this).parents(".row").find(".time-block").addClass("present")
         $(this).parents(".row").find(".time-block").removeClass("past")
-        $(this).parents(".row").find(".time-block").removeClass("future")
+        $(this).parents(".row").find(".time-block").removeClass("future")*/
+        $(this).removeClass("past");
+        $(this).removeClass("future");
+        $(this).addClass("present");
     }
     // set future time
     else {
-        $(this).parents(".row").find(".time-block").addClass("future")
+        /*$(this).parents(".row").find(".time-block").addClass("future")
         $(this).parents(".row").find(".time-block").removeClass("present")
-        $(this).parents(".row").find(".time-block").removeClass("past")
+        $(this).parents(".row").find(".time-block").removeClass("past")*/
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
     }
 });
 }
 // retrieve data from local storage
-$(this).parents(".row").find(".time-block").val(localStorage.getItem(timeBlock));
+/*$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-9"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-10"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-11"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-12"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-13"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-14"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-15"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-16"));
+$(this).parents(".row").find(".time-block").val(localStorage.getItem("hour-17"));*/
+$("hour-9 .description").val(localStorage.getItem("hour-9"));
+$("hour-10 .description").val(localStorage.getItem("hour-10"));
+$("hour-11 .description").val(localStorage.getItem("hour-11"));
+$("hour-12 .description").val(localStorage.getItem("hour-12"));
+$("hour-13 .description").val(localStorage.getItem("hour-13"));
+$("hour-14 .description").val(localStorage.getItem("hour-14"));
+$("hour-15 .description").val(localStorage.getItem("hour-15"));
+$("hour-16 .description").val(localStorage.getItem("hour-16"));
+$("hour-17 .description").val(localStorage.getItem("hour-17"));
 // call function
 currentWorldTime()
 });   
