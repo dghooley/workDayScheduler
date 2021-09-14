@@ -25,7 +25,12 @@
 
 ### Screenshot
 
+<img width="1268" alt="Screen Shot 2021-09-12 at 2 42 43 PM" src="https://user-images.githubusercontent.com/29662632/133000623-3f75ce4c-c5ec-4f90-a855-c4c28a5bd7ca.png">
+
+
 #### Live URL
+
+https://dghooley.github.io/workDayScheduler/
 
 
 
