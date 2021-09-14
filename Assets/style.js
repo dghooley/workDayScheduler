@@ -48,6 +48,7 @@ $(".time-block").each(function () {
 }
 // call 
 currentHour()
+// commit to local storage
 $("#hour-9 .userInput").val(localStorage.getItem("hour-9"));
 $("#hour-10 .userInput").val(localStorage.getItem("hour-10"));
 $("#hour-11 .userInput").val(localStorage.getItem("hour-11"));
